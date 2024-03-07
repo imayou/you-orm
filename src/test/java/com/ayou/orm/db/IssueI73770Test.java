@@ -12,7 +12,6 @@
 
 package com.ayou.orm.db;
 
-import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,9 +31,24 @@ public class IssueI73770Test {
 		Assert.assertEquals(Integer.valueOf(9), result.get(0).getId());
 	}
 
-	@Data
 	static class User {
 		private Integer id;
 		private String name;
+
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 }
